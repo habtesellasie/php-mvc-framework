@@ -1,0 +1,15 @@
+{
+  "name": "habte/php-mvc-frameword",
+  "authors": [
+    {
+      "name": "Habtesellasie Fissha",
+      "email": "havecodesoft@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  },
+  "require": {}
+}
