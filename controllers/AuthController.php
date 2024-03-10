@@ -15,28 +15,43 @@ class AuthController extends Controller
         return $this->render('login');
     }
 
+    // public function register(Request $request)
+    // {
+    //     $registerModel = new RegisterModel();
+    //     $errors = [];
+
+    //     if ($request->isPost()) {
+    //         $registerModel->loadData($request->getBody());
+
+
+    //         if ($registerModel->validate() && $registerModel->register()) {
+    //             return 'success';
+    //         }
+
+
+    //         return $this->render('register', [
+    //             'model' => $registerModel
+    //         ]);
+    //     }
+
+    //     $this->setlayout('auth');
+    //     return $this->render('register', [
+    //         'errors' => $errors
+    //     ]);
+    // }
+
     public function register(Request $request)
     {
         $registerModel = new RegisterModel();
-        $errors = [];
-
         if ($request->isPost()) {
             $registerModel->loadData($request->getBody());
-
-
             if ($registerModel->validate() && $registerModel->register()) {
                 return 'success';
             }
-
-
-            return $this->render('register', [
-                'model' => $registerModel
-            ]);
         }
-
         $this->setlayout('auth');
         return $this->render('register', [
-            'errors' => $errors
+            'model' => $registerModel
         ]);
     }
 }

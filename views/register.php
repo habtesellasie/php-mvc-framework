@@ -1,6 +1,7 @@
 <?php
 
 use app\core\form\Form;
+
 ?>
 <div class="d-flex align-items-center justify-content-center vh-100">
     <div class="col-md-6 col-lg-5">
@@ -12,7 +13,7 @@ use app\core\form\Form;
                 <h2 class="heading-section">Register</h2>
                 <p class="text-center mb-4">Have an account? <a href="/login">Login</a></p>
             </div>
-            <?= $form->field($model, 'firstname') ?>
+            <?php $form->field($model, 'firstname') ?>
             <?= $form->field($model, 'lastname') ?>
             <?= $form->field($model, 'email')->emailField() ?>
             <?= $form->field($model, 'password')->passwordField() ?>
@@ -22,9 +23,6 @@ use app\core\form\Form;
             </div>
 
             <?php Form::end() ?>
-            <!-- <form action="/register" method="post" class="login-form">
-                
-            <!-- </form> -->
         </div>
     </div>
 </div>
